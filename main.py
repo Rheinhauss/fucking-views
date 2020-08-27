@@ -3,12 +3,21 @@
 import requests
 from bs4 import BeautifulSoup
 from time import *
+<<<<<<< HEAD
 import io
 from fake_useragent import UserAgent
+=======
+import random
+
+# with open('fake_ua.txt', 'r') as f:
+#     fake_ua = [fua.strip() for fua in f.readlines()]
+# ua = random.choice(fake_ua)
+>>>>>>> e4bf88256ba4833ecf20e72b9a0abfdd53f3c94d
 
 # user-agent
 
 user = {
+<<<<<<< HEAD
     'Host': 'www.zhihu.com',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -19,6 +28,18 @@ user = {
     'Upgrade-Insecure-Requests': '1',
     'Cache-Control': 'max-age=0',
     'TE': 'Trailers',
+=======
+    'Host':'www.zhihu.com',
+    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+    'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Accept-Language':'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+    'Accept-Encoding':'gzip, deflate,',
+    'Connection':'keep-alive',
+    
+    'Upgrade-Insecure-Requests':'1',
+    'Cache-Control':'max-age=0',
+    'TE':'Trailers',
+>>>>>>> e4bf88256ba4833ecf20e72b9a0abfdd53f3c94d
 }
 
 
@@ -70,8 +91,8 @@ if __name__ == "__main__":
         start_time = time()
         print(user['User-Agent'])
         handle(url)
-        sleep(1)
-        # 防反爬，不能过快
+        a = random.uniform(0.1,0.5)
+        # 防反爬，生成随机时间间隔
         end_time = time()
         running_time = end_time - start_time
         print("running time:{:.4}s".format(running_time))
